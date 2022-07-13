@@ -4,12 +4,15 @@
 
 <style>
   .back-changes {
-    background-color: rgb(60, 139, 80);
+    background-color: rgb(132, 206, 150);
   }
 
   .row {
     padding-bottom: 5px;
   }
+
+  h4 {text-align: center;}
+  
 </style>
 
 
@@ -36,13 +39,13 @@
             <h4 class="card-title">{{bike.bike_name}}</h4>
             <div class="card-text">
               {% if bike.instock == False %}
-              <span class="meta" style="color: red;"> Status : Out of Stock </span>
+              <span class="meta" style="color: red;"> Status: Out of Stock </span>
               {% endif %}
             </div>
           </div>
           <div class="card-footer">
             <span class="meta">
-              <center> Price : {{bike.price}} Eur </center>
+              <center> Price: {{bike.price}} Eur </center>
             </span>
           </div>
         </div>

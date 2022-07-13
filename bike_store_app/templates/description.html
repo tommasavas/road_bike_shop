@@ -3,16 +3,26 @@
 {% block content %}
 <style>
     .card-layout {
-        width: 50%;
+        width: 60%;
         margin: 0 auto;
-        margin-top: 50px;
-        padding: 20px;
+        margin-top: 60px;
+        padding: 50px;
         background: #ffffff;
     }
+    
+    h1 {text-align: left;}
+    p {text-align: justify;}
+    
+    .container {
+        height:25vh;
+        width: 40vw;
+        margin-left: 70px;
+    }
+
 </style>
 
-<div class="card card-layout " style="width: 50rem;">
-    <img class="card-img-top" src="{{bike.image.url}}" style="width:50%"></img>
+<div class="card card-layout " style="width: 60rem;">
+    <img class="card container" src="{{bike.image.url}}" style=></img>
     
     <h1 class="text-danger card-block card-title">
         {{bike.bike_name}}
@@ -24,7 +34,7 @@
         <div class="card-footer">
         {% if bike.instock == True  %}
         <a href="add">
-            <button type="button" class="btn btn-info btn-sm" style="width: 450px;">
+            <button type="button" class="btn btn-info btn-sm" style="width: 470px;">
                 ADD TO CART
             </button>
         </a>

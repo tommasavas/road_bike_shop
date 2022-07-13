@@ -123,3 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# media folder settings
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'bike_store_app/media/')
+
+MEDIA_URL = '/media/'
+# print(MEDIA_ROOT) - nevenkite padebuginti, bus lengviau nepasiklysti django filesystem džiunglėse

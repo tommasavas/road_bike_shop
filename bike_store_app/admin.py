@@ -10,9 +10,15 @@ class ProducerAdmin(admin.ModelAdmin):
 class BikeAdmin(admin.ModelAdmin):
     list_display = ('bike_name', 'bike_producer',)
 
+class MyCartAdmin(admin.ModelAdmin):
+    list_display = ('bike', 'user')
+
+class MyOrderAdmin(admin.ModelAdmin):
+    list_display = ('bike', 'user', 'date')
+
 
 admin.site.register(Producer, ProducerAdmin)
 admin.site.register(Bike, BikeAdmin)
 admin.site.register(Tag)
-admin.site.register(MyCart)
-admin.site.register(MyOrder)
+admin.site.register(MyCart, MyCartAdmin)
+admin.site.register(MyOrder, MyOrderAdmin)

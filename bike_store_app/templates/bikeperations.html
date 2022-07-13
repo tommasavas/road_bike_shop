@@ -13,8 +13,8 @@
     <input type="text" name="bike_name" placeholder="Bike name"><br>
     <input list="browsers" name="bike_producer" placeholder="Bike Producer">
     <datalist id="browsers">
-        {% for kalakar in producer %}
-        <option value=" {{kalakar.id}} {{kalakar.bike_producer}} ">
+        {% for ratas in producer %}
+        <option value=" {{ratas.id}} {{ratas.bike_producer}} ">
         {% endfor %}
     </datalist><br>
     <input type="number" name="price" placeholder="price"><br>
@@ -33,7 +33,7 @@
         {% if item.instock == True %}
         <h1 style="color: green;"> Available </h1>
         {% else %}
-        <h1 style="color: red;"> out of stock </h1>
+        <h1 style="color: red; text-align: center;"> out of stock </h1>
         {% endif %}
 
     </h1>

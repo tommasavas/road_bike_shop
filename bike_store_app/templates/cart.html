@@ -2,8 +2,6 @@
 
 {% block content %}
 
-<h1>Your Cart </h1>
-
 <style>
     .back-class {
         background-color: aliceblue;
@@ -15,7 +13,17 @@
     h3 {
         color: seagreen;
     }
+
+    h1 {
+        font-weight: ;
+        margin-left: 70px;
+        color: rgb(160, 160, 165);
+    }
+
+
 </style>
+
+<h1>Your Cart</h1>
 
 {% for cart,bike in con %}
 
@@ -28,7 +36,7 @@
     {% if bike.instock == True %}
     <input class="btn btn-info btn-sm" type = 'Submit' name='submit' value='ORDER' style="width: 460px "> 
     {% else %}
-    <h1 style="color: red;"> out of stock</h1>
+    <h4 style="color: red;"> out of stock</h4>
     {% endif %}
 </form>
     {% if bike.instock == True %}

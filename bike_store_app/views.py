@@ -70,9 +70,9 @@ def order(request,id, *args, **kwargs):
     user_obj = User.objects.get(username=request.user)
     print(id)
     bike_obj = Bike.objects.get(id = id)
-    obj = MyOrder.objects.create(user = user_obj, art_id = bike_obj)
+    obj = MyOrder.objects.create(user = user_obj, bike = bike_obj)
     obj.save()
-    cart_obj = MyCart.objects.filter(art_id = bike_obj)
+    cart_obj = MyCart.objects.filter(bike = bike_obj)
     cart_obj.delete()
     bike_obj.instock = False
     bike_obj.save()

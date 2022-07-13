@@ -19,12 +19,12 @@
     }
 </style>
 
-{% for order,art in con %}
+{% for order,bike in con %}
 
 
 <div class="card card-layout back-class" style="width: 50rem;">
-    <img class="card-img-top" src="{{ art.image.url }}" style="width:100%"></img>
-    <h3>price = {{ art.price}}</h3>
+    <img class="card-img-top" src="{{ bike.image.url }}" style="width:100%"></img>
+    <h3>price = {{ bike.price}}</h3>
     <h3>date = {{ order.date }}</h3>
 
 </div>

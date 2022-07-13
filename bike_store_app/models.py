@@ -28,6 +28,8 @@ class Bike(models.Model):
     instock = models.BooleanField(null = False,blank=False, default=True)
     description = models.TextField(null=False, blank=False)
 
+    def __str__(self):
+        return self.bike_name
 
 # TAGs
 class Tag(models.Model):
@@ -48,3 +50,5 @@ class MyOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bike = models.ForeignKey(Bike, on_delete=models.CASCADE)
     date = models.DateTimeField(default=datetime.now())
+
+    

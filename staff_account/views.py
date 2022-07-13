@@ -19,7 +19,7 @@ def checkStaff(request, *args, **kwargs):
         if user is not None:
             print(request.user)
             auth.login(request, user)
-            return render(request, 'artoperations.html', {})
+            return render(request, 'bikeoperations.html', {})
     return redirect('stafflogin')
 
 
@@ -31,13 +31,13 @@ def add_bike(request, *args, **kwargs):
         'bike': bike,
         'producer': producer,
     }
-    return render(request, "artoperations.html", context)
+    return render(request, "bikeoperations.html", context)
 
 
 def upload(request, *args, **kwargs):
     if request.method == 'POST':
-        bike_name = request.POST['art_name']
-        bike_producer = request.POST['artist_name']
+        bike_name = request.POST['bike_name']
+        bike_producer = request.POST['bike_producer']
         producer = Producer.objects.get(id = bike_producer.split()[0])
         description = request.POST['description']
         price = request.POST['price']
@@ -57,4 +57,4 @@ def upload(request, *args, **kwargs):
     context = {
         'bike': bike,
     }
-    return render(request, "artoperations.html", context)
+    return render(request, "bikeoperations.html", context)
