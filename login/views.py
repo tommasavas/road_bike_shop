@@ -3,20 +3,23 @@ from django.contrib.auth.models import User, auth
 
 # Create your views here.
 
+
 def login(request, *args, ** kwargs,):
     if request.method == 'POST':
-        user_name = request.POST.get('user_name',False)
+        user_name = request.POST.get('user_name', False)
         password = request.POST['password']
-        user = auth.authenticate(username = user_name, password=password)
+        user = auth.authenticate(username=user_name, password=password)
         print(request.user)
         if user is not None:
             auth.login(request, user)
             return redirect('../')
     return render(request, 'login.html', {})
 
+
 def logout(request, *args, ** kwargs):
     auth.logout(request)
     return redirect('/')
+
 
 def register(request, *args, ** kwargs):
     if request.method == 'POST':
@@ -35,8 +38,8 @@ def register(request, *args, ** kwargs):
             elif (User.objects.filter(username=user_name).exists()):
                 print('username exist')
             else:
-                user = User.objects.create_user(username = user_name,password=password1, email=email,
-                            first_name=first_name, last_name=last_name)
+                user = User.objects.create_user(username=user_name, password=password1, email=email,
+                                                first_name=first_name, last_name=last_name)
                 user.save()
         else:
             return redirect('register')

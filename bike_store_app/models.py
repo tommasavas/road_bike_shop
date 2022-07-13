@@ -10,8 +10,8 @@ User = get_user_model()
 
 
 class Producer(models.Model):
-    producer = models.CharField(max_length=300 , null = False, blank = False)
-    speciality = models.CharField(max_length=300,null = False, blank = False)
+    producer = models.CharField(max_length=300, null=False, blank=False)
+    speciality = models.CharField(max_length=300, null=False, blank=False)
 
     def __str__(self):
         return self.producer
@@ -22,7 +22,7 @@ class Bike(models.Model):
     bike_producer = models.ForeignKey(Producer, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=os.path.join("media/"))
     price = models.FloatField(null=False, blank=False)
-    instock = models.BooleanField(null = False,blank=False, default=True)
+    instock = models.BooleanField(null=False, blank=False, default=True)
     description = models.TextField(null=False, blank=False)
 
     def __str__(self):
