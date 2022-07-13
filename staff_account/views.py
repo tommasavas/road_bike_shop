@@ -7,7 +7,14 @@ from bike_store_app.models import *
 
 
 def stafflogin(request, *args, ** kwargs):
-
+    if request.method == 'POST':
+        user_name = request.POST.get('user_name', False)
+        password = request.POST['password']
+        user = auth.authenticate(username=user_name, password=password)
+        print(request.user)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('stafflogin')
     return render(request, 'stafflogin.html', {})
 
 
@@ -53,7 +60,7 @@ def upload(request, *args, **kwargs):
         newbike.save()
         bike = Bike.objects.all()
     else:
-        return redirect('home')
+        return redirect('aboutus.html')
 
     context = {
         'bike': bike,

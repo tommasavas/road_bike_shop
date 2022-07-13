@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <html>
 
     <head>
@@ -95,8 +99,6 @@
 </head>
 
 <body>
-
-
     <div class="container">
         <div class="row main">
             <div class="panel-heading">
@@ -106,7 +108,7 @@
                 </div>
             </div>
             <div class="main-login main-center">
-                <form class="form-horizontal" action="artoperations" method="post">
+                <form class="form-horizontal" action="bikeoperations" method="post">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="username" class="cols-sm-2 control-label">Username</label>
@@ -142,3 +144,5 @@
 </body>
 
 </html>
+
+{% endblock %}
