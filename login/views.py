@@ -3,7 +3,6 @@ from django.contrib.auth.models import User, auth
 
 # Create your views here.
 
-
 def login(request, *args, ** kwargs,):
     if request.method == 'POST':
         user_name = request.POST.get('user_name',False)
@@ -15,11 +14,9 @@ def login(request, *args, ** kwargs,):
             return redirect('../')
     return render(request, 'login.html', {})
 
-
 def logout(request, *args, ** kwargs):
     auth.logout(request)
     return redirect('/')
-
 
 def register(request, *args, ** kwargs):
     if request.method == 'POST':

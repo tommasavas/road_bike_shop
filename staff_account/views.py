@@ -9,7 +9,6 @@ def stafflogin(request, *args, ** kwargs):
 
     return render(request, 'stafflogin.html', {})
 
-
 def checkStaff(request, *args, **kwargs):
     if request.method == 'POST':
         user_name = request.POST.get('user_name', False)
@@ -22,7 +21,6 @@ def checkStaff(request, *args, **kwargs):
             return render(request, 'bikeoperations.html', {})
     return redirect('stafflogin')
 
-
 def add_bike(request, *args, **kwargs):
     bike = Bike.objects.all()
     producer = Producer.objects.all()
@@ -32,7 +30,6 @@ def add_bike(request, *args, **kwargs):
         'producer': producer,
     }
     return render(request, "bikeoperations.html", context)
-
 
 def upload(request, *args, **kwargs):
     if request.method == 'POST':

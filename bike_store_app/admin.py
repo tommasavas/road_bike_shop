@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+
 # Register your models here.
 
 
@@ -10,8 +11,10 @@ class ProducerAdmin(admin.ModelAdmin):
 class BikeAdmin(admin.ModelAdmin):
     list_display = ('bike_name', 'bike_producer',)
 
+
 class MyCartAdmin(admin.ModelAdmin):
     list_display = ('bike', 'user')
+
 
 class MyOrderAdmin(admin.ModelAdmin):
     list_display = ('bike', 'user', 'date')

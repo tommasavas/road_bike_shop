@@ -91,3 +91,4 @@ def order_view(request, *args, **kwargs):
         'con': con
     }
     return render(request,"order.html",context)
+    
