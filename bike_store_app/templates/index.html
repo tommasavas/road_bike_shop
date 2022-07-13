@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+  .back-changes {
+    background-color: rgb(60, 139, 80);
+  }
+
+  .row {
+    padding-bottom: 5px;
+  }
+</style>
+
+
+<!-- Categories -->
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="icon-bar-cat">
+    {% for tag in tags %}
+    <a href="cat/{{tag.tag}}">{{tag.tag}}</a>
+    {% endfor %}
+  </div>
+</form>
+
+
+<div class="container">
+  <div class="row">
+    {% for bike in bikes %}
+    <div class="col-sm-6 col-md-4 col-lg-4 ">
+      <a href="description/{{bike.id}}" class="d-block photo-item">
+        <div class="card card-inverse card-info">
+          <img class="card-img-top" src='{{ bike.image.url }} ' />
+          <div class="card-block">
+            <h4 class="card-title">{{bike.bike_name}}</h4>
+            <div class="card-text">
+              {% if bike.instock == False %}
+              <span class="meta" style="color: red;"> Status : Out of Stock </span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="meta">
+              <center> Price : {{bike.price}} Eur </center>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}
