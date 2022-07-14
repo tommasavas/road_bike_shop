@@ -11,6 +11,7 @@ class ProducerAdmin(admin.ModelAdmin):
 class BikeAdmin(admin.ModelAdmin):
     list_display = ('bike_name', 'bike_producer',)
 
+
 class TagAdmin(admin.ModelAdmin):
     list_display = ('tag',)
 
