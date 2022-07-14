@@ -11,13 +11,13 @@
     }
 
     h3 {
-        color: seagreen;
+        color: rgb(92, 167, 125);
     }
 
     h1 {
-        font-weight: ;
+        /* font-weight: ; */
         margin-left: 70px;
-        color: rgb(160, 160, 165);
+        color: rgb(191, 191, 192);
     }
 
 
@@ -31,8 +31,8 @@
     {% csrf_token %}
 <div class="card card-layout back-class" style="width: 50rem;">
     <img class="card-img-top" src="{{bike.image.url }}" style="width:100%"></img>
-    <h3>price = {{bike.price}}</h3>
-    <h3>date = {{cart.added_date }}</h3>
+    <h3>Price = {{bike.price}}</h3>
+    <h3>Date = {{cart.added_date }}</h3>
     {% if bike.instock == True %}
     <input class="btn btn-info btn-sm" type = 'Submit' name='submit' value='ORDER' style="width: 460px "> 
     {% else %}
